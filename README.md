@@ -32,7 +32,7 @@ python3 tests/smoke_http.py
 python3 tests/concurrency.py
 ```
 
-The tests use temporary databases. The concurrency check starts independent PHP processes sharing SQLite; exactly 10 of 40 reservations succeed against 10 units. They cover validation, retries, payload conflicts, SQL parameter binding, rollback, persistence after reconnecting, HTTP status codes, invalid JSON, oversized bodies and alert exits. An optional GitHub Actions example is in `docs/ci-example.yml`, not enabled because the publishing credential lacks workflow permission. No remote CI result is claimed.
+The tests use temporary databases. The concurrency check starts independent PHP processes sharing SQLite; exactly 10 of 40 reservations succeed against 10 units. They cover validation, retries, payload conflicts, SQL parameter binding, rollback, persistence after reconnecting, HTTP status codes, invalid JSON, oversized bodies and alert exits. An optional GitHub Actions example is in `docs/ci-example.yml`, provided as a reference rather than an enabled workflow. Tests were run locally; no remote CI result is claimed.
 
 ## API
 
