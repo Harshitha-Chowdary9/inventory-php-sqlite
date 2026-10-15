@@ -1,0 +1,17 @@
+name: PHP checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          extensions: pdo_sqlite
+          coverage: none
+      - run: php tests/store.php
+      - run: python3 tests/smoke_http.py
+      - run: python3 tests/concurrency.py
